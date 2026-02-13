@@ -283,7 +283,14 @@ export function md5(inputString): string {
 
 // getCssVar('--tooltip-grey') -> #b1b1b1
 export function getCssVar(name: string): string {
-  return getComputedStyle(document.documentElement)
-    .getPropertyValue(name)
-    .trim();
+  if (typeof document === 'undefined' || typeof window === 'undefined') {
+    return '';
+  }
+  try {
+    return getComputedStyle(document.documentElement)
+      .getPropertyValue(name)
+      .trim();
+  } catch {
+    return '';
+  }
 }

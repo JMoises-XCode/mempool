@@ -6,7 +6,7 @@ import { originalChartColors as chartColors } from '@app/app.constants';
 import { ApiService } from '@app/services/api.service';
 import { SeoService } from '@app/services/seo.service';
 import { StateService } from '@app/services/state.service';
-import { isMobile, getCssVar} from '@app/shared/common.utils';
+import { isMobile, getCssVar } from '@app/shared/common.utils';
 import { download } from '@app/shared/graphs.utils';
 import { AmountShortenerPipe } from '@app/shared/pipes/amount-shortener.pipe';
 import { RelativeUrlPipe } from '@app/shared/pipes/relative-url/relative-url.pipe';
@@ -168,7 +168,7 @@ export class NodesPerISPChartComponent implements OnInit {
         },
         data: isp[0],
       } as PieSeriesOption);
-    }); 
+    });
 
     // 'Other'
     data.push({
